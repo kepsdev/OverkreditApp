@@ -4,11 +4,10 @@
     "slug": "Overkredit",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/splash/icon.png",
+    "icon": "./src/assets/splash/Geeks.png",
     "splash": {
       "image": "./src/assets/splash/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
