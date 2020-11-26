@@ -17,7 +17,7 @@ export class App extends Component {
       'Lato-Light':require('./src/assets/fonts/Lato-Light.ttf'),
       'Lato-Bold':require('./src/assets/fonts/Lato-Bold.ttf'),
     });
-    this.setState({fontLoaded:false});
+    this.setState({fontLoaded:true});
   }
   render() {
     return (
