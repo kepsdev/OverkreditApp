@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { Text, View, ActivityIndicator,StatusBar } from 'react-native'
+import {Font} from 'expo'
+import DefaultScreen from './src'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export class App extends Component {
+  constructor(){
+    super()
+    this.state={
+      fontLoaded:false
+    }
+  }
+  async componentDidMount(){
+    await Font.loadAsync({
+      'Lato':require('./src/assets/fonts/Lato-Regular.ttf'),
+      'Lato-Black':require('./src/assets/fonts/Lato-Black.ttf'),
+      'Lato-Light':require('./src/assets/fonts/Lato-Light.ttf'),
+      'Lato-Bold':require('./src/assets/fonts/Lato-Bold.ttf'),
+    });
+    this.setState({fontLoaded:true});
+  }
+  render() {
+    return (
+      <View>
+        <StatusBar hidden={true} />
+        {this.state.fontLoaded?(
+        <DefaultScreen/>
+        ) : (
+          <ActivityIndicator size="large" />
+        )}
+      </View>
+    )
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
