@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, ActivityIndicator,StatusBar } from 'react-native'
-import {Font} from 'expo'
+import * as Font from 'expo-font'
 import DefaultScreen from './src'
 
 export class App extends Component {
@@ -17,16 +17,18 @@ export class App extends Component {
       'Lato-Light':require('./src/assets/fonts/Lato-Light.ttf'),
       'Lato-Bold':require('./src/assets/fonts/Lato-Bold.ttf'),
     });
-    this.setState({fontLoaded:true});
+    this.setState({fontLoaded:false});
   }
   render() {
     return (
-      <View>
+      <View style={{flex:1}}>
         <StatusBar hidden={true} />
         {this.state.fontLoaded?(
         <DefaultScreen/>
         ) : (
-          <ActivityIndicator size="large" />
+          <View style={{justifyContent: 'center', alignContent:'center',alignSelf:'center',flex:1}}>
+            <ActivityIndicator size="large" color="#000000" />
+          </View>
         )}
       </View>
     )
