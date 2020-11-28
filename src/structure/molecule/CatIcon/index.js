@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
     title :{
         color: '#fff',
         fontFamily: 'Lato-Light',
-        paddingTop: 5
+        paddingTop: 5,
+        fontSize: 12
     },
     container: {
         borderRadius: 8,

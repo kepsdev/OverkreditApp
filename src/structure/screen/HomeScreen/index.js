@@ -5,7 +5,7 @@ import SearchBar from '../../organism/SearchBar';
 
 const HomeScreen = () => {
     return (
-        <View>
+        <View style={{marginBottom:50}}>
             <SearchBar title="Browse"/>
             <SafeAreaView>
                 <ScrollView>
